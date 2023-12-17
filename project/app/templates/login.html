@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Авторизация</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div>
+                {% for field in form %}
+                    <div class="form__group">
+                        {{ field.label_tag }}
+                        <div>{{ field }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <input type="submit" value="Отправить">
+        </form>
+    <div/>
+</body>
+</html>
